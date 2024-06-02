@@ -1,4 +1,4 @@
-export const Badge = () => {
+export default function Badge() {
   return (
     <span className="badge">
       <svg
@@ -14,7 +14,7 @@ export const Badge = () => {
         />
         <path d="M8.77667 17.9211V11.0447L3.04407 14.4153L8.77667 17.9211Z" fill="#ffffff" />
       </svg>
-      Beta
+      Beta -v2
     </span>
   )
 }
