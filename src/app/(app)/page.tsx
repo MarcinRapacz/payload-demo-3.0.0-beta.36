@@ -2,13 +2,22 @@ import { Badge } from '@/components/Badge'
 import { Background } from '@/components/Background'
 import Link from 'next/link'
 import React from 'react'
+import { getPayloadHMR } from '@payloadcms/next/utilities'
+import configPromise from '@payload-config'
 
-const Page = () => {
+const Page = async () => {
+  const payload = await getPayloadHMR({ config: configPromise })
+
+  const data = await payload.find({
+    collection: 'users',
+  })
+
   return (
     <>
       <main>
         <article>
           <Badge />
+          <pre>{JSON.stringify(data)}</pre>
           <h1>Payload 3.0</h1>
           <p>
             This BETA is rapidly evolving, you can report any bugs against{' '}
